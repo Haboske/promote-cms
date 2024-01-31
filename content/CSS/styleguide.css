@@ -361,7 +361,6 @@ p{
     .icon-contact.map{
         background-image: ;
     }
-
 .icon-social{
     height: 25px;
     width: 25px;
@@ -381,10 +380,6 @@ p{
     .icon-social-linkedin{
         background-image: url(content/PNG/social-linkedin.svg);
     }
-
-.icon-slash{
-
-}
 
 /* MARGIN */
 
@@ -498,7 +493,11 @@ p{
 .jusitfy-between{
     justify-content: space-between;
 }
-
 .align-center{
     align-items: center;
+}
+.divider{
+    height: 1px;
+    width: 100%;
+    background-color: #CCCCCC;
 }
