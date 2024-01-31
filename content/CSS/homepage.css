@@ -1,0 +1,21 @@
+.homepage-computer{
+    max-height: 500px;
+}
+.homepage-megaphone{
+    position: absolute;
+    top: -50px;
+    left: 0;
+    max-width: 150px;
+}
+.homepage-checkmark{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    max-width: 150px;
+}
+.homepage-target{
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    max-height: 190px;
+}
