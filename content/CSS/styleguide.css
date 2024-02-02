@@ -37,6 +37,10 @@ a{
 
 /* BACKGROUND COLOR */
 
+.background-color-white{
+    background-color: white;
+}
+
 .background-color-black{
     background-color: #292930;
     color: white;
@@ -386,6 +390,9 @@ p{
     }
     .icon.purple{
         background-color: #CA87FF;
+    }
+    .icon.black{
+        background-color: #292930;
     }
 
 .icon-contact{

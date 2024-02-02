@@ -104,6 +104,20 @@
             <div class="icon orange"></div>
             <p class="text-uppercase text-size-small margin-top-small"><span class="text-color-yellow">//</span> 02 . Nos valeurs</p> 
             <h2 class="heading-medium">Les valeurs fondamentales qui sous-tendent notre travail</h2>
+            <section id="carousel">
+                <img src="./content/SVG/arrow_left.svg" alt="Left Carousel Arrow" class="arrow" id="left-arrow">
+                <img src="./content/SVG/arrow_right.svg" alt="Right Carousel Arrow" class="arrow" id="right-arrow">
+                <div class="slide-image" id="slide1">
+                </div>
+                <div class="slide-image" id="slide2">
+                </div>
+                <div class="slide-image" id="slide3">
+                </div>
+                <div class="slide-image" id="slide4">
+                </div>
+                <div class="slide-image" id="slide5">
+                </div>
+            </section>
             <div class="display-flex flex-row small-gap align-center margin-top-medium"> 
                 <a class="button black small" href="">Contact</a>
                 <a class="button white small display-flex align-center micro-gap" href="">Nos services <img src="./content/SVG/button-right-arrow.svg"></a>
@@ -171,22 +185,78 @@
         </section>
 
         <!-- section "Nos bureaux" -->
-
         <section class="background-gradient-blueToYellow-pastel section-spacing display-flex justify-center">
-            <div class="icon"></div>
-            <div>
-                <h4>blabla</h4>
-            </div>
-            <a class="button black" href="">Lorem ipsum</a>    
-            <div class="display-flex align-center">
-                <button class="border-radius-medium">dfsfsdsdf</button>
-                <button class="border-radius-medium">dfsfsdsdf</button>
-                <button class="border-radius-medium">dfsfsdsdf</button>
-            </div>        
-        </section>
+            <div class="display-flex flex-column align-center normal-gap">
+                <div class="display-flex flex-raw align-center tiny-gap">
+                    <div class="icon black"></div>
+                    <div>
+                        <p class="text-uppercase text-size-small"><span class="text-color-blue">//</span> 04 . Nos bureaux</p>
+                        <h2 class="heading-medium">Notre équipe d’experts marketing</h2>
+                    </div>
+                </div>
 
+                <!-- Partie photos -->
+
+                <div class="display-flex flex-row small-gap">
+                    <div class="wrapper background-color-white display-flex flex-column align-center small-gap border-light grey padding-tiny border-radius-big">
+                        <div class="display-flex flex-column tiny-gap">
+                            <div><img src="./content/PNG/america.svg"></div>
+                            
+                            <p class="font-weight-semibold">San Francisco, USA</p>
+                            <p>1650 Page, San Francisco, </br>
+                                            California(CA), 94117</p>
+                            <div class="display-flex flex-raw micro-gap">
+                                <img src="./content/SVG/phone.svg">
+                                <p>(414) 809 - 2567</p>
+                            </div>
+                            <div class="display-flex flex-raw micro-gap">
+                                <img src="./content/SVG/letter.svg">
+                                <p>Contact@promote.com</p>
+                            </div>
+                        </div>                
+                    </div>
+                    <div class="wrapper background-color-white display-flex flex-column align-center small-gap border-light grey padding-tiny border-radius-big">
+                        <div class="display-flex flex-column tiny-gap">
+                            <div><img src="./content/PNG/canada.svg"></div>
+                            
+                            <p class="font-weight-semibold">Toronto, CA</p>
+                            <p>1650 Page, San Francisco, </br>
+                                            California(CA), 94117</p>
+                            <div class="display-flex flex-raw micro-gap">
+                                <img src="./content/SVG/phone.svg">
+                                <p>(414) 809 - 2567</p>
+                            </div>
+                            <div class="display-flex flex-raw micro-gap">
+                                <img src="./content/SVG/letter.svg">
+                                <p>Contact@promote.com</p>
+                            </div>
+                        </div>                
+                    </div>
+                    <div class="wrapper background-color-white display-flex flex-column align-center small-gap border-light grey padding-tiny border-radius-big">
+                        <div class="display-flex flex-column tiny-gap">
+                            <div><img src="./content/PNG/america.svg"></div>
+                            
+                            <p class="font-weight-semibold">San Francisco, USA</p>
+                            <p>1650 Page, San Francisco, </br>
+                                            California(CA), 94117</p>
+                            <div class="display-flex flex-raw micro-gap">
+                                <img src="./content/SVG/phone.svg">
+                                <p>(414) 809 - 2567</p>
+                            </div>
+                            <div class="display-flex flex-raw micro-gap">
+                                <img src="./content/SVG/letter.svg">
+                                <p>Contact@promote.com</p>
+                            </div>
+                        </div>                
+                    </div>
+                </div>
+            </div>
+        </section>
+        
     </main>
     <script src="scripts/augment_stat.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="js/caroussel.js"></script>
     <?php require 'api/footer.php' ?>
 </body>
 </html>
