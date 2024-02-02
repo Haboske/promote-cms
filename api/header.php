@@ -1,7 +1,7 @@
 <header class="navbar">
     <div class="wrapper display-flex flex-row align-center large-gap">
         <div class="logo-wrapper">
-            <img class="navbar-logo" src="content/SVG/Logo.svg">
+            <img class="navbar-logo" src="content/PNG/Logo.svg">
         </div>
         <nav class="navbar-links-wrapper">
             <a class="navbar-link-current" href="#">Accueil</a>
