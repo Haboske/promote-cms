@@ -180,6 +180,7 @@ p{
 }
 
 
+
 /* BUTTON */
 
 .button{
@@ -237,12 +238,10 @@ p{
 
     padding: 10px 20px;
     border-radius: 50px;
-    border: 1px solid #292930;
 }
     .tag.yellow{
         color: #292930;
         background-color: #FFDC60;
-        border: 1px solid FFDC60;
     }
 
 /* BANNER IMAGE */
@@ -353,33 +352,18 @@ p{
     background-size: auto;
 }  
     .icon-contact.mail{
-        background-image: ;
+        background-image: url("../SVG/icon-email.svg");
     }
     .icon-contact.tel{
-        background-image: ;
+        background-image: url("../SVG/icon-tel.svg");
     }
     .icon-contact.map{
-        background-image: ;
+        background-image: url("../SVG/icon-position.svg");
     }
-.icon-social{
-    height: 25px;
-    width: 25px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+
+.icon-slash{
+
 }
-    .icon-social-insta{
-        background-image: url(content/PNG/social-insta.svg);
-    }
-    .icon-social-facebook{
-        background-image: url(content/PNG/social-facebook.svg);
-    }
-    .icon-social-twiter{
-        background-image: url(content/PNG/social-twiter.svg);
-    }
-    .icon-social-linkedin{
-        background-image: url(content/PNG/social-linkedin.svg);
-    }
 
 /* MARGIN */
 
@@ -470,6 +454,9 @@ p{
 .flex-row{
     flex-direction: row;
 }
+.micro-gap{
+    gap: 10px;
+}
 .tiny-gap{
     gap: 20px;
 }
@@ -493,11 +480,11 @@ p{
 .jusitfy-between{
     justify-content: space-between;
 }
+
 .align-center{
     align-items: center;
 }
-.divider{
-    height: 1px;
-    width: 100%;
-    background-color: #CCCCCC;
+
+.align-left{
+    align-items: flex-start;
 }
