@@ -10,6 +10,21 @@
         z-index: -1;
     }
 
+@media screen and (max-width: 768px){
+    .about-computer-background{
+        display: none;
+    }
+
+    .section-about-aboutus-content-wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .about-computer{
+        max-width: 70vw;
+    }
+}
+
 .divider-tiny-blue{
     height: 3px;
     width: 25%;
