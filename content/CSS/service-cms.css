@@ -1,0 +1,27 @@
+.service-cms-contact-content-wrapper{
+    position: relative;
+    
+}
+
+    .service-cms-contact-content-wrapper .image-wrapper{
+        overflow: visible;
+    }
+
+    .service-cms-contact-rocket{
+        position: absolute;
+        top: -70px;
+        left: 0;
+        max-width: 233px;
+        transform: rotate(-40deg);
+    }
+
+    
+@media screen and (max-width: 768px){
+    .service-cms-contact-rocket{
+        position: inherit;
+        top: 0;
+        display: block;
+        margin-bottom: 30px;
+    }
+}
+    
