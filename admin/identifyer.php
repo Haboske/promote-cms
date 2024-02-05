@@ -6,7 +6,8 @@
     <title>Identifyer</title>
 </head>
 <body>
-<button type="button" onclick="window.location.href='./login.php';">
+<!-- "Location: ../admin/login.php" -->
+<button type="button" onclick="window.location.href='../includes/formhandler_inc.php';">
       Admin
     </button>
 </body>
