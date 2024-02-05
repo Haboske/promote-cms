@@ -1,0 +1,219 @@
+:root, body, *{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.bo-section{
+    position: relative;
+
+    width: calc(100vw - 10vw);
+    height: calc(100vh - 10vh);
+}
+
+.bo-spacing{
+    position: relative;
+    padding: 5vh 5vw;
+    max-width: calc(100vw - 10vw);
+    height: calc(100vh - 10vh);
+
+    background-color: #f1f1f1;
+}
+
+/* NAVBAR */
+
+.bo-navbar{
+    z-index: 1000;
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    width: 150px;
+
+    height: calc(100vh - 10vh);
+
+    background-color: white;
+    border-right: 2px solid #f1f1f1;
+}
+    .bo-navbar-wrapper{
+        padding: 50px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+        .bo-navbar-list{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+.bo-current-icon-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #F6F5FF;
+    border-radius: 15px;
+    border: 2px solid #5956E8;
+}
+
+/* SEARCHBAR */
+        
+
+.bo-searchbar{
+    z-index: 100;
+
+    position: fixed;
+    top: 5vh;
+    left: calc(5vw + 150px);
+
+    background-color: white;
+    height: 100px;
+    width: calc(100vw - 10vw - 150px);
+    border-bottom: 2px solid #f1f1f1;
+
+}
+
+    .bo-searchbar-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 20px 30px;
+        height: calc(100% - 40px);
+    }
+        .bo-searchbar-logo-wrapper{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+            .bo-searchbar-logo{
+                height: 100%;
+            }
+
+.bo-wrapper{
+    z-index: 10;
+
+    position: fixed;
+    left: calc(5vw + 150px);
+    top: calc(5vh + 100px);
+    
+    width: calc(100vw - 10vw - 150px - 60px);
+    height: calc(100vh - 10vh - 100px - 60px);
+    /* max-height: calc(100vh - 10vh - 100px); */
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    background-color: white;
+    border-right: 1px solid #f1f1f1;
+
+    padding: 30px;
+}
+
+    .bo-flexbox{
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 30px;
+
+    }
+
+.bo-child-wrapper{
+
+    background-color: white;
+    border: 2px solid #f1f1f1;
+    border-radius: 15px;
+    padding: 30px;
+
+}
+
+/* GRID */
+
+.bo-grid{
+    position: relative;
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+    /* COL TEMPLATES */
+    .bo-grid.bo-1col{
+        grid-template-columns: 1fr;
+    }
+    .bo-grid.bo-2col{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bo-grid.bo-3col{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .bo-grid.bo-4col{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .bo-grid.bo-5col{
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    /* ROW TEMPLATES */
+    .bo-grid.bo-1row{
+        grid-template-rows: 1fr;
+    }
+    .bo-grid.bo-2row{
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .bo-grid.bo-3row{
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .bo-grid.bo-4row{
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .bo-grid.bo-5row{
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    /* GAP */
+
+    .bo-grid.bo-tiny-gap{
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    .bo-grid.bo-small-gap{
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+    }
+    .bo-grid.bo-medium-gap{
+        grid-column-gap: 60px;
+        grid-row-gap: 60px;
+    }
+    .bo-grid.bo-large-gap{
+        grid-column-gap: 80px;
+        grid-row-gap: 80px;
+    }
+    .bo-grid.bo-big-gap{
+        grid-column-gap: 100px;
+        grid-row-gap: 100px;
+    }
+
+/* FLEXBOX */
+
+.bo-flex{
+    display: flex;
+}
+
+    /* FLEX DIRECTIONS */
+
+    .bo-flex-row{
+        flex-direction: row;
+    }
+    .bo-flex-col{
+        flex-direction: column;
+    }
+
+
+
+
+
