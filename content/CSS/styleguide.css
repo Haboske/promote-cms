@@ -26,6 +26,10 @@ a{
     text-decoration-line: none;
 }
 
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{
+    font-family: Nunito, sans-serif;
+}
+
 
 /* SECTION */
 
@@ -72,6 +76,13 @@ a{
     justify-content: center;
 }
 
+.button-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
 @media screen and (max-width: 1024px) {
     .image-wrapper{
         justify-content: flex-start !important;
@@ -82,6 +93,11 @@ a{
 @media screen and (max-width: 768px) {
     .heading-wrapper-1{
         flex-direction: column;
+    }
+    .button-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
     
 }
@@ -948,14 +964,18 @@ p{
     grid-row-gap: 70px;
 }
 
-    
-
 .display-grid-2col-1row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 70px;
     grid-row-gap: 0px;
+}
+
+.display-grid-2col-1row-21{
+    display: grid;
+    grid-template-columns: 2fr 1fr; /** 21 because column template is : 2fr 1fr **/
+    grid-template-rows: 1fr;
 }
 
 .display-grid-1col-3row {
@@ -1016,6 +1036,7 @@ p{
         .display-grid-3col-1row-111 .grid-child-2 { grid-area: 2 / 1 / 3 / 2; }
         .display-grid-3col-1row-111 .grid-child-3 { grid-area: 2 / 2 / 3 / 3; }
     
+    
 }
 
 @media screen and (max-width: 1024px){
@@ -1066,6 +1087,11 @@ p{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
+    }
+
+    .display-grid-2col-1row-21{
+        display: flex;
+        flex-direction: column;
     }
 }
 
