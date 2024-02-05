@@ -1,0 +1,11 @@
+New file : Admin
+--> Old project Back-end (admin interface) added :
+------>admin.php for admin interface
+------>crash_test_pass-secure.php that salt, hash and reverse password for security
+------>forgot.php for  forgot password
+------>identifyer.php will be deleted when paste 
+------>etc...
+--> Connect old project Back-end to this project
+
+New file : Includes
+--> Starting to connect database to the dbh_inc.php file, following tutoriel that shared on our Discord server

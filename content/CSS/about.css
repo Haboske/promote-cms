@@ -1,0 +1,91 @@
+.about-computer{
+    max-width: 480px;
+    z-index: 10;
+}
+    .about-computer-background{
+        position: absolute;
+        top: -60%;
+        left: -23%;
+        width: 200%;
+        z-index: -1;
+    }
+
+.divider-tiny-blue{
+    height: 3px;
+    width: 25%;
+    border-radius: 50px;
+    background-color: #5956E8;
+}
+
+#carousel {
+    /*Set the container carousel to be fullscreen. If you change the size
+    of your carousel make sure to also change the size of your slides*/
+    height: 20vh;
+    width: 70vw;
+    /*Prevent images from wrapping*/
+    white-space: nowrap;
+    overflow: hidden;
+    /*Allow children to be positioned relatively*/
+    position: relative;
+}
+
+.slide-image {
+    /*Make the image container full screen*/
+    width: 15vw;
+    height: 60vh;
+    /*Make the image cover the the screen and center it*/
+    background-position: center;
+    background-size: cover;
+    /*Make images inline with each other*/
+    display: inline-block;
+}
+
+.arrow {
+    width: 5%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#right-arrow {
+    right: -5px;
+}
+
+#left-arrow {
+    left: -5px;
+}
+
+#slide1 {
+    background-image: url('../PNG/image1.jpg');
+}
+
+#slide2 {
+    background-image: url('../PNG/image2.jpg');
+}
+
+#slide3 {
+    background-image: url('../PNG/image3.jpg');
+}
+
+#slide4 {
+    background-image: url('../PNG/image4.jpg');
+}
+
+#slide5 {
+    background-image: url('../PNG/image5.jpg');
+}
+
+/*Mobile Devices*/
+@media (max-device-width: 1024px) {
+    .arrow {
+        width: 20%;
+    }
+}
+
+/*Small Browsers*/
+@media (max-width: 768px) {
+    .arrow {
+        width: 10%;
+    }
+}

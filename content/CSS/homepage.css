@@ -1,139 +1,21 @@
 .homepage-computer{
     max-height: 500px;
 }
-
 .homepage-megaphone{
     position: absolute;
     top: -50px;
     left: 0;
     max-width: 150px;
 }
-
 .homepage-checkmark{
     position: absolute;
     bottom: -50px;
     left: 0;
     max-width: 150px;
 }
-
 .homepage-target{
     position: absolute;
     bottom: -50px;
     right: 0;
     max-height: 190px;
 }
-
-.homepage-about-dividers{
-    position: absolute;
-    left: 100%;
-    width: 100%;
-}
-
-.homepage-about-main-image{
-    position: absolute;
-    top: -15%;
-    left: -30%;
-    width: 160%;
-    z-index: -1;
-}
-
-.homepage-process-row-img{
-    max-width: 300px;
-}
-
-.homepage-project-dropdown{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background-color: #383840;
-    border: 1px solid #383840;
-    border-radius: 15px;
-
-    padding: 45px;
-    opacity: 50%;
-}
-
-    .homepage-project-dropdown.selected{
-
-        border: 1px solid #5E5E62;
-        opacity: 100%;
-    }
-    
-    .homepage-project-dropdown.selected .icon.black{
-        background-color: #5956E8;
-    }
-
-.homepage-project-image{
-    /* max-width: 450px; */
-    width: 100%;
-    border-radius: 15px;
-}
-
-.homepage-pricing-price{
-    font-family: Nunito;
-    font-size: 50px;
-    font-weight: 900;
-}
-
-.homepage-advantages-background{
-    position: absolute;
-    top: -100%;
-    left: -50%;
-    width: 160%;
-    z-index: -1;
-}
-
-@media screen and (max-width: 1024px){
-    .homepage-advantages-background{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 768px){
-    .homepage-process-wrapper{
-        padding: 30px 0 30px 0;
-        grid-row-gap: 30px;
-    }
-        .homepage-process-card.display-grid-3col-1row-212{
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            grid-template-rows: 1fr;
-        }
-            .homepage-process-cards-icon-wrapper{
-                grid-area: 1 / 1 / 2 / 2;
-                justify-content: flex-start;
-            }
-            .homepage-process-cards-content-wrapper{
-                grid-area: 1 / 2 / 2 / 3;
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-                .homepage-process-cards-content-wrapper p{
-                    text-align: left;
-                }
-            .homepage-process-cards-image-wrapper{
-                display: none;
-            }
-            .homepage-process-card .icon.white.pink-stroke{
-                min-width: 50px;
-                width: 50px;
-                min-height: 50px;
-                height: 50px;
-
-                border: 5px solid #FFD1C8;
-            }
-    .homepage-casestudy-content-wrapper, .homepage-advantages-content-wrapper, .homepage-heading-content-wrapper{
-        display: flex;
-        flex-direction: column;
-    }
-    .homepage-about-content-wrapper{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    
-}
-    
-    
-    
-    
