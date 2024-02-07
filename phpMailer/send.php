@@ -7,15 +7,15 @@ require 'src/PHPMailer.php';
 require 'src/SMTP.php';
 
 if(isset($_POST["send"])){
-    $email = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = '';
+    $mail->Username = 'ker-wan@hotmail.com';
     $mail->Password = 'Tigrou2023!';
     $mail->SMTPSecure = 'ssl!';
-    $mail->Port = '465!';
+    $mail->Port = '25';
 
     $mail->setFrom('promote.test.student@gmail.com');
 
@@ -23,7 +23,7 @@ if(isset($_POST["send"])){
 
     $mail->isHTML(true);
     
-    $mail->subject = $_POST["subject"];
+    $mail->Subject = $_POST["subject"];
     $mail->Body = $_POST["message"];
 
     $mail->send();
