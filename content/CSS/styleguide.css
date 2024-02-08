@@ -310,6 +310,9 @@ p{
         .background-color-black .button.black{
             border: 1px solid white;
         }
+        .background-gradient-softBlack .button.black{
+            border: 1px solid white;
+        }
     .button.white{
         background-color: #FFFFFF;
         border: 1px solid #292930;
@@ -595,15 +598,7 @@ p{
     background-position: center;
     background-size: auto;
 }  
-    .icon-contact.mail{
-        background-image: ;
-    }
-    .icon-contact.tel{
-        background-image: ;
-    }
-    .icon-contact.map{
-        background-image: ;
-    }
+
 
 .icon-social{
     height: 25px;
@@ -900,6 +895,11 @@ p{
 .divider{
     height: 1px;
     width: 100%;
+    background-color: #CCCCCC;
+}
+.small-divider{
+    height: 1px;
+    width: 25px;
     background-color: #CCCCCC;
 }
 .background-color-black .divider{
