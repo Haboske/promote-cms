@@ -1,22 +1,35 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=promote_cms;', 'root', '');
-$allblogs = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC');
+$bdd = new PDO('mysql:host=mysql-promote-cms.alwaysdata.net;dbname=promote-cms_bdd;', '347331', '3kzJ&@tCzKzd3JF7');
+$allblogs = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 5');
+$blog_writting_datetime = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
+$blog_title = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
+$blog_desc = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
+$blog_blog_banner_img_url = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
+$blog_category = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
 
-if(isset($_GET['s']) AND !empty($_GET['s'])){
-    $search = htmlspecialchars($_GET['s']);
-    $blog_writting_datetime = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
-    $blog_title = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
-    $blog_desc = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
-    $blog_blog_banner_img_url = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
-    $blog_category = $bdd->query('SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1');
 
-    $last_article_date = $blog_writting_datetime->fetch(PDO::FETCH_ASSOC);
-    $last_article_title = $blog_title->fetch(PDO::FETCH_ASSOC);
-    $last_article_desc = $blog_desc->fetch(PDO::FETCH_ASSOC);
-    $last_article_img = $blog_desc->fetch(PDO::FETCH_ASSOC);
-    $last_article_category = $blog_category->fetch(PDO::FETCH_ASSOC);
+$last_article_date = $blog_writting_datetime->fetch(PDO::FETCH_ASSOC);
+$last_article_title = $blog_title->fetch(PDO::FETCH_ASSOC);
+$last_article_desc = $blog_desc->fetch(PDO::FETCH_ASSOC);
+$last_article_img = $blog_desc->fetch(PDO::FETCH_ASSOC);
+$last_article_category = $blog_category->fetch(PDO::FETCH_ASSOC);
+// if(isset($_GET['s']) AND !empty($_GET['s'])){
+//     $search = htmlspecialchars($_GET['s']);
+// }
+
+$searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
+if (empty($searchTerm)) {
+    $query = $bdd->query("SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 1");
+} else {
+    $query = $bdd->prepare("SELECT * FROM cms_blog WHERE blog_title LIKE :searchTerm ORDER BY blog_id DESC LIMIT 1");
+    $query->execute(array(':searchTerm' => '%' . $searchTerm . '%'));
 }
+
+$blog = $query->fetch(PDO::FETCH_ASSOC);
+
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -26,7 +39,6 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="content/CSS/styleguide.css">
     <link rel="stylesheet" href="content/CSS/blog.css">
-    <title>Document</title>
     <?php require 'api/css.php' ?>
 </head>
 <body>
@@ -51,11 +63,11 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
 
             <form method="GET">
                 <div class="display-flex align-center justify-center small-gap">
-                    <input class="input-recherche text-color-lightgrey border-semidbold" type="search" name="s" placeholder="Rechercher dans le blog" autocomplete="off">
-                    <input class="button small button black" type="submit" name="search" value="Recherche">
-                
-                </div>
-            </form>
+                    <form method="GET" action="">
+                        <input class="input-recherche text-color-lightgrey border-semidbold" type="search" name="search" placeholder="Rechercher dans le blog..." autocomplete="off">
+                        <button class="button small button black" type="submit">Recherche</button>
+                    </form>
+                </div>  
         </div>
 
 
@@ -64,15 +76,26 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
                 <div class=" text">
 
                     <div class="text-title">
-                        <a class="border-light border-radius-big marketing"><?php echo $last_article_category['blog_category']; ?></a>
-                        <h3 class="heading-micro title"><?php echo $last_article_date['blog_writting_datetime']; ?></h3>
+                    <?php 
+                        if ($blog) {
+                            echo "<a class='border-light border-radius-big marketing'>".$blog['blog_category']."</a>";
+                            echo "<p class='heading-micro title'>".$blog['blog_writting_datetime']."</p>";
+                        }
+                    ?>
                     </div>
 
                     <div class="text">
-                        <h2 class="heading-tiny-small"><?php echo $last_article_title['blog_title']; ?></h2>
-                        <p class="text-color-darkgrey"><?php echo $last_article_desc['blog_desc']; ?></p> 
+                    <?php                    
+                        if ($blog) {
+                        echo "<h2 class='heading-tiny-small'>".$blog['blog_title']."</h2>";
+                        echo "<p class='text-color-darkgrey'>".$blog['blog_desc']."</p>";
+                        } else {
+                        echo "Aucun blog trouvé.";
+                        }
+                        ?>
                         
                     </div>
+
                     <div class="text">
                         <a class="button white small margin-top-tiny">En Savoir Plus</a>
                     </div>
@@ -80,7 +103,12 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
             </table>
 
             <div class="image">
-                <img class="border-radius-medium" src="/content/blog-CMS/blog_banner_img_url" alt="Une réunion dans un bureau">
+            <?php                    
+                if ($blog) {
+                echo "<img class='border-radius-medium' src='".$blog['blog_banner_img_url']."' alt='Image du blog'>";
+                }
+            ?>
+
             </div>
         </table>
 
@@ -107,11 +135,69 @@ if(isset($_GET['s']) AND !empty($_GET['s'])){
                 
             </div>
             <div class="">
-                <a class="small button black">Tous</a>
-                <a class="small button white">Croissance</a>
-                <a class="small button white">Contenu</a>
-                <a class="small button white">Réseaux</a>
-            </div>
+                <form method="post">
+                    <button type="submit" name="tous" class="small button <?php if(isset($_POST['tous']) || (!isset($_POST['marketing']) && !isset($_POST['services']) && !isset($_POST['seo']))){echo "black";}else{echo "white";}?>">Tous</button>                    
+                    <button type="submit" name="marketing" class="small button <?php if(isset($_POST['marketing'])){echo "black";}else{echo "white";}?>">Marketing</a>
+                    <button type="submit" name="services" class="small button <?php if(isset($_POST['services'])){echo "black";}else{echo "white";}?>">Services</button>
+                    <button type="submit" name="seo" class="small button <?php if(isset($_POST['seo'])){echo "black";}else{echo "white";}?>">SEO</button>
+                </form>
+                <?php
+
+?>
+
+        <div class="display-flex background-color-yellow border-radius-light margin-top-medium">
+            <table class="table">
+                <div class=" text">
+
+                <div id="blogsContainer" class="">
+                    <?php
+                    if(isset($_POST['tous'] )|| (!isset($_POST['marketing']) && !isset($_POST['services']) && !isset($_POST['seo']))) {
+                        $query = $bdd->prepare("SELECT * FROM cms_blog ORDER BY blog_id DESC LIMIT 5");
+                        $query->execute();
+                        $articles = $query->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($articles as $article) {
+                            echo "<h2>".$article['blog_title']."</h2>";
+                            echo "<p>".$article['blog_desc']."</p>";
+                            echo "<p> Date de parution : ".$article['blog_writting_datetime']."</p>";
+                        }
+                    } 
+                    if(isset($_POST['marketing'])) {
+                        $query = $bdd->prepare("SELECT * FROM cms_blog WHERE blog_category = 'Marketing' ORDER BY blog_id DESC LIMIT 5");
+                        $query->execute();
+                        $articles = $query->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($articles as $article) {
+                            echo "<h2>".$article['blog_title']."</h2>";
+                            echo "<p>".$article['blog_desc']."</p>";
+                            echo "<p> Date de parution : ".$article['blog_writting_datetime']."</p>";
+                        }
+                    }
+                    if(isset($_POST['services'])) {
+                        $query = $bdd->prepare("SELECT * FROM cms_blog WHERE blog_category = 'Services' ORDER BY blog_id DESC LIMIT 5");
+                        $query->execute();
+                        $articles = $query->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($articles as $article) {
+                            echo "<h2>".$article['blog_title']."</h2>";
+                            echo "<p>".$article['blog_desc']."</p>";
+                            echo "<p> Date de parution : ".$article['blog_writting_datetime']."</p>";
+                        }
+                    }
+                    if(isset($_POST['seo'])) {
+                        $query = $bdd->prepare("SELECT * FROM cms_blog WHERE blog_category = 'SEO' ORDER BY blog_id DESC LIMIT 5");
+                        $query->execute();
+                        $articles = $query->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($articles as $article) {
+                            echo "<h2>".$article['blog_title']."</h2>";
+                            echo "<p>".$article['blog_desc']."</p>";
+                            echo "<p> Date de parution : ".$article['blog_writting_datetime']."</p>";
+                        }
+                    }
+                    
+                    
+                    ?>
+                </div>
+                        
+                </div>
+            </table>
         </div>
 
     </section>
