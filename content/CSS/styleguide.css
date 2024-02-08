@@ -974,3 +974,18 @@ p{
         flex-direction: column;
     }
 }
+
+.newsletter-text{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+    .input-newletter{
+        width: 300px;
+        height: 40px;
+        background-color: #555555;;
+        border: 1px;
+        border-radius: 5px;
+        padding: 5px;
+    }
