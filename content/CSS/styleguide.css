@@ -639,9 +639,6 @@ p{
 }  
     .icon-contact.mail{
         background-image: url("../SVG/icon-email.svg");
-
-.icon-contact.mail{
-        background-image: ;
     }
     .icon-contact.tel{
         background-image: url("../SVG/icon-tel.svg");
@@ -827,7 +824,7 @@ p{
 }
 .micro-gap{
     gap: 10px;
-
+}
 .flex-nowrap{
     flex-wrap: nowrap;
 }
@@ -1167,3 +1164,4 @@ p{
         border-radius: 5px;
         padding: 5px;
     }
+

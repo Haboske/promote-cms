@@ -11,9 +11,15 @@
     <?php require 'api/header.php' ?>
     <main>
 
-        <!-- SECTION 00 -->
-        <!-- WHITE CIRCLE BANNER SECTION -->
-        <section class="section-spacing"></section>
+        <!-- SECTION -01 -->
+        <!-- WHITE CIRCLE BANNER -->
+        <section class="section-white-circle-banner background-gradient-blueToYellow-pastel">
+            <div class="white-circle-wrapper">
+                    <!-- Texte non responsive -->
+                    <h1 class="white-circle-heading heading-huge">Nos services</h1>
+                    <img class ="white-circle-faded-pattern center-in-circle" src="./content/PNG/Pattern.svg">
+            </div>
+        </section>
             
         <!-- SECTION 01 -->
         <!-- SERVICES -->

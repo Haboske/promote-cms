@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="content/CSS/about.css">
 </head>
 <body>
-<?php # require 'api/header.php' ?>
+<?php require 'api/header.php' ?>
     <main>    
 
         <!-- SECTION -01 -->
