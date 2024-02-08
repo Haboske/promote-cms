@@ -722,6 +722,9 @@ p{
 
 /* PADDING */
 
+.padding-micro{
+    padding: 15px;
+}
 .padding-tiny{
     padding: 15px;
 }
@@ -1009,7 +1012,6 @@ p{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-
 .display-grid-3col-2row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1112,6 +1114,14 @@ p{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px){
+    .display-grid-3col-2row {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
     }
 }
 
