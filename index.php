@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php require 'api/css.php' ?>
-    <link rel="Stylesheet" href="content/CSS/homepage.css"
+    <link rel="Stylesheet" href="content/CSS/homepage.css">
 </head>
 <body>
     <?php require 'api/header.php' ?>

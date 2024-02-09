@@ -1,0 +1,126 @@
+.p-size {
+    color: #292930;
+    font-family: "Noto Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 156.5%;
+    letter-spacing: 2.025px;
+    text-transform: uppercase;
+}
+
+.size-contact{
+    color: #292930;
+    font-family: "Noto Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 156.5%;
+    letter-spacing: 2.025px;
+    text-transform: uppercase;
+    margin: 14px;
+}
+
+.cards-wrapper{
+    position: relative;
+    width: 100%;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.card1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: linear-gradient(111deg, #E9F7FF 9.66%, #FFDBD4 57.52%, #FFF3CA 103.42%);
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+}
+.card2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: linear-gradient(111deg, #E9F7FF 9.66%, #FFDBD4 57.52%, #FFF3CA 103.42%);
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 2;
+}
+.card3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: linear-gradient(111deg, #E9F7FF 9.66%, #FFDBD4 57.52%, #FFF3CA 103.42%);
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 3;
+}
+.card-small{
+    display: flex;
+    z-index: 100;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+}
+
+.divider{
+    width: 100%;
+    height: 1px;
+    background: #ECECEC;
+}
+
+.display-grid{
+    display: grid;
+    grid-template-rows: 30% 30% 30%;
+    grid-template-columns: 30% 30% 30%;
+    height: 100%;
+    gap: 5%;
+}
+
+.color-wrapper{
+    border-radius: 15px;
+    background: linear-gradient(151deg, #FFF8F8 10.38%, #F5F7FF 95.44%);
+}
+
+.input-contact{
+    border-radius: 7px;
+    border: 1px solid #DCDCDC;
+    background: #FFF;
+    width: 100%;
+    height: 65px;
+}
+
+.input-contact-message{
+    border-radius: 7px;
+    border: 1px solid #DCDCDC;
+    background: #FFF;
+    min-width: 800px;
+    min-height: 300px;
+    max-width: 800px;
+    max-height: 300px;
+}
+
+.background-contact{
+    width: 100%;
+    height: 65px;
+}
+
+.margin-bottom{
+    margin-bottom: 20px;
+}
+
+.cards-wrapper-letter{
+    width: 100%;
+    height: 500px;
+    align-items: stretch;
+    justify-content: stretch;
+}
