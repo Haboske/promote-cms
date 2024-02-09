@@ -11,6 +11,11 @@
     padding: 0 0;
 }
 
+body{
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 *{
 
     font-family: Noto Sans, sans-serif;
@@ -19,6 +24,10 @@
 a{
     color: #292930;
     text-decoration-line: none;
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{
+    font-family: Nunito, sans-serif;
 }
 
 
@@ -30,20 +39,15 @@ a{
 }
 
 /* WRAPPER */
-
-<<<<<<< Updated upstream
 .section-wrapper{
     max-width: 1440px;
+    width: 100%;
     margin: 0 auto 0 auto;
 }
-
-=======
->>>>>>> Stashed changes
 .wrapper{
     position: relative;
 }
 
-<<<<<<< Updated upstream
 .image-wrapper{
     position: relative;
     display: flex;
@@ -51,7 +55,18 @@ a{
     align-items: center;
 }
 
+.dynamic-card-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.button-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
 
 @media screen and (max-width: 1024px) {
     .image-wrapper{
@@ -64,16 +79,21 @@ a{
     .heading-wrapper-1{
         flex-direction: column;
     }
+    .button-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
 }
-
-
-=======
->>>>>>> Stashed changes
 /* BACKGROUND COLOR */
 
 .background-color-black{
     background-color: #292930;
     color: white;
+}
+.background-color-white{
+    background-color: #FFFF;
 }
 
 .background-color-grey{
@@ -92,13 +112,12 @@ a{
     background-color: #FFDBD4;
 }
 
-<<<<<<< Updated upstream
 .background-color-darkgrey{
     background-color: #3C3C45;
 }
-
-=======
->>>>>>> Stashed changes
+.background-color-white{
+    background-color: white;
+}
 .background-gradient-softBlack{
     background: rgb(54,54,62);
     background: linear-gradient(180deg, rgba(54,54,62,1) 0%, rgba(41,41,48,1) 100%);
@@ -204,6 +223,10 @@ p{
     font-size: 25px;
 }
 
+.text-size-medium{
+    font-size: 20px;
+}
+
 .text-align-center{
     text-align: center;
 }
@@ -220,6 +243,7 @@ p{
     font-weight: 600;
 }
 
+
 /* BUTTON */
 
 .button{
@@ -228,6 +252,16 @@ p{
     padding: 20px 80px;
     border-radius: 10px;
     text-wrap: nowrap;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: 0.3s ease-in-out
+    }
+    .button:hover{
+        transform: translateY(-5px);
     }
     .button.black{
         background-color: #292930;
@@ -235,6 +269,9 @@ p{
         color: white;
     }
         .background-color-black .button.black{
+            border: 1px solid white;
+        }
+        .background-gradient-softBlack .button.black{
             border: 1px solid white;
         }
     .button.white{
@@ -262,8 +299,18 @@ p{
     .button.small{
         padding: 20px 40px;
     }
-    
+
+    .button.integrated-icon{
+        font-size: 25px;
+        font-weight: 600;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 15px 20px 15px;    
+      }
 /* TAG */
+
 .tag{
     max-height: 25px;
 
@@ -277,12 +324,10 @@ p{
 
     padding: 10px 20px;
     border-radius: 50px;
-    border: 1px solid #292930;
 }
     .tag.yellow{
         color: #292930;
         background-color: #FFDC60;
-        border: 1px solid FFDC60;
     }
 
 /* BANNER IMAGE */
@@ -291,8 +336,13 @@ p{
     width: 100%;
     max-height: 600px;
 }
+.image-logo{
+    max-width: 30% ;
+}
+.image-full-width{
+    width: 100%;
+}
 
-<<<<<<< Updated upstream
 .section-main-image{
     max-width: 480px;
     z-index: 10;
@@ -319,10 +369,6 @@ p{
         display: none;
     }
 }
-    
-
-=======
->>>>>>> Stashed changes
 /* HEADER */
 
 
@@ -415,7 +461,38 @@ p{
     border-radius: 100%;
     background-color: white;
 }
-<<<<<<< Updated upstream
+.icon-projet{
+    min-width: 88px;
+    width: 88px;
+    min-height: 88px;
+    height: 88px;
+    border-radius: 100%;
+    background-color: #F5B7FF;
+}
+    .icon-case-study{
+        min-width: 88px;
+        width: 88px;
+        min-height: 88px;
+        height: 88px;
+        border-radius: 100%;
+        background-color: #F96A4B;
+    }
+.icon-navigation-left{
+    min-width: 58px;
+    width: 58px;
+    min-height: 58px;
+    height: 58px;
+    border-radius: 100%;
+    background-color: #454545;
+}
+.icon-navigation-right{
+    min-width: 58px;
+    width: 58px;
+    min-height: 58px;
+    height: 58px;
+    border-radius: 100%;
+    background-color: #F1F1F1;  
+}
 
     .icon.black{
         background-color: #292930;
@@ -433,7 +510,7 @@ p{
     .icon.pink{
         background-color: #F5B7FF;
     }
-    .icon.violet{
+    .icon.purple{
         background-color: #CA87FF;
     }
     .icon.orange{
@@ -481,25 +558,18 @@ p{
     background-size: auto;
 }  
     .icon-contact.mail{
-        background-image: ;
+        background-image: url("../SVG/icon-email.svg");
     }
     .icon-contact.tel{
-        background-image: ;
+        background-image: url("../SVG/icon-tel.svg");
     }
     .icon-contact.map{
-        background-image: ;
+        background-image: url("../SVG/icon-position.svg");
     }
-=======
->>>>>>> Stashed changes
 
-.icon-social{
-    height: 25px;
-    width: 25px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+.icon-slash{
+
 }
-<<<<<<< Updated upstream
     .icon-social-insta{
         background-image: url(content/PNG/social-insta.svg);
     }
@@ -528,10 +598,12 @@ p{
     min-height: 50px;
     height: 50px;
 }
-=======
->>>>>>> Stashed changes
 
 /* MARGIN */
+
+.margin-top-auto{
+    margin-top: auto;
+}
 
 .margin-top-tiny{
     margin-top: 15px;
@@ -544,10 +616,12 @@ p{
 .margin-top-medium{
     margin-top: 65px;
 }
-<<<<<<< Updated upstream
-
 .margin-top-huge{
     margin-top: 150px;
+}
+
+.margin-bottom-tiny{
+    margin-bottom: 15px
 }
 
 .margin-left-tiny{
@@ -557,20 +631,20 @@ p{
     margin-left: 65px;
 }
 
+
+
 @media screen and (max-width: 1024px) {
     .margin-left-medium{
         margin-left: 0px;
     }
 }
-=======
-.margin-left-tiny{
-    margin-left: 40px;
-}
->>>>>>> Stashed changes
 
 /* PADDING */
 
 .padding-tiny{
+    padding: 15px;
+}
+.padding-micro{
     padding: 30px;
 }
 .padding-small{
@@ -615,25 +689,20 @@ p{
     border-radius: 30px;
 }
 
-<<<<<<< Updated upstream
+.position-absolute{
+    position: absolute;
+}
 
-
-=======
->>>>>>> Stashed changes
 /* DISPLAY GRID */
 
 .display-grid{
     display: grid;
 }
 
-<<<<<<< Updated upstream
-=======
-/* GRID PROPERTIES */
-
 .grid-2-col{
     grid-template-columns: repeat(auto-fill, minmax(50%, 50%));
 }
->>>>>>> Stashed changes
+
 
 /* DISPLAY FLEX*/
 
@@ -641,21 +710,22 @@ p{
     display: flex;
 }
 
-<<<<<<< Updated upstream
-/* FLEX DIRECTIONS */
 
-=======
 /* FLEX PROPERTIES */
->>>>>>> Stashed changes
+  /* FLEX DIRECTIONS */
 .flex-column{
     flex-direction: column;
 }
 .flex-row{
     flex-direction: row;
 }
-<<<<<<< Updated upstream
 
-
+.micro-gap{
+    gap: 10px;
+}
+.flex-nowrap{
+    flex-wrap: nowrap;
+}
 
 /* JUSTIFY */
 
@@ -670,6 +740,9 @@ p{
 }
 .justify-between{
     justify-content: space-between;
+}
+.justify-stretch{
+    justify-content: stretch;
 }
 
 /* ALIGN */
@@ -686,8 +759,12 @@ p{
 
 /* GAP */
 
-=======
->>>>>>> Stashed changes
+.micro-gap{
+    gap: 10px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
 .tiny-gap{
     gap: 20px;
 }
@@ -703,12 +780,14 @@ p{
 .large-gap{
     gap: 100px;
 }
-<<<<<<< Updated upstream
+
 .huge-gap{
     gap: 150px;
     grid-column-gap: 150px;
     grid-row-gap: 150px;
 }
+  
+
 
 @media screen and (max-width: 1024px){
     .medium-gap{
@@ -726,6 +805,14 @@ p{
         grid-column-gap: 70px;
         grid-row-gap: 70px;
     }
+}
+
+.align-center{
+    align-items: center;
+}
+
+.align-left{
+    align-items: flex-start;
 }
 
 @media screen and (max-width: 768px){
@@ -763,10 +850,8 @@ button{
   font-size: 14px;
 }
 
-    button:hover,
-    button:focus {
+    button:hover,button:focus {
     color: #999;
->>>>>>> Stashed changes
     }
 
 button:active {
@@ -774,18 +859,19 @@ button:active {
   color: black;
   outline: 1px solid black;
 }
-
-<<<<<<< Updated upstream
-/* DIVIDER */
-
 .divider{
     height: 1px;
     width: 100%;
     background-color: #CCCCCC;
 }
-.background-color-black .divider{
-    background-color: #5D5D63;
+.small-divider{
+    height: 1px;
+    width: 25px;
+    background-color: #CCCCCC;
 }
+  .background-color-black .divider{
+    background-color: #5D5D63;
+  }
 
 .mesureing-tape{
     height: 0px;
@@ -799,10 +885,48 @@ button:active {
     border-radius: 15px;
 }
 
+/* BIG WHITE CIRCLE BANNER SECTION */
+
+.section-white-circle-banner {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 180px;
+}
+
+    .white-circle-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33vw;
+        height: 33vw;
+        border-radius:50%;
+        margin-bottom: -240px;
+        background-color: #F4F6FB;
+    }
+
+        .white-circle-faded-pattern{
+            z-index: 1;
+            position: absolute; 
+            top: 6%;
+            width: 70%;
+            height: 70%;
+        }
+
+        .white-circle-heading{
+            z-index: 2;
+            margin-bottom: 40%;
+        }
+
 /* GRID TEMPLATES */
 
-/* GRID PROPERTIES */
-
+.display-grid-2col{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 .display-grid-3col-2row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -811,14 +935,18 @@ button:active {
     grid-row-gap: 70px;
 }
 
-    
-
 .display-grid-2col-1row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 70px;
     grid-row-gap: 0px;
+}
+
+.display-grid-2col-1row-21{
+    display: grid;
+    grid-template-columns: 2fr 1fr; /** 21 because column template is : 2fr 1fr **/
+    grid-template-rows: 1fr;
 }
 
 .display-grid-1col-3row {
@@ -842,6 +970,12 @@ button:active {
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+}
+
+.display-grid-4col-1row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
 }
 
 .display-grid-1col-2row {
@@ -873,6 +1007,7 @@ button:active {
         .display-grid-3col-1row-111 .grid-child-2 { grid-area: 2 / 1 / 3 / 2; }
         .display-grid-3col-1row-111 .grid-child-3 { grid-area: 2 / 2 / 3 / 3; }
     
+    
 }
 
 @media screen and (max-width: 1024px){
@@ -889,6 +1024,20 @@ button:active {
 
         .display-grid-2col-1row .grid-child-mobile-top { grid-area: 1 / 1 / 2 / 2; }
         .display-grid-2col-1row .grid-child-mobile-bottom { grid-area: 2 / 1 / 3 / 2; }
+
+    .display-grid-4col-1row{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px){
+    .display-grid-3col-2row {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -912,6 +1061,17 @@ button:active {
     .display-grid-2col-1row{
         grid-row-gap: 40px;
     }
+
+    .display-grid-4col-1row{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .display-grid-2col-1row-21{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 
@@ -922,29 +1082,64 @@ button:active {
     .mobile-heading-wrapper{
         flex-direction: column;
     }
-=======
-.radio-btn {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-  
-    border: 2px solid #999;
-    transition: 0.2s all linear;
-    margin-right: 5px;
-  
-    position: relative;
-    top: 4px;
-  }
+    .radio-btn {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+
+      border: 2px solid #999;
+      transition: 0.2s all linear;
+      margin-right: 5px;
+
+      position: relative;
+      top: 4px;
+    }
 
     .radio-btn:checked {
         border: 6px solid #5956E8;
     }
 
 .card-input{
-    width: 500px;
->>>>>>> Stashed changes
+  width: 500px;
+}
+
+
+/* NEWSLETTER */
+.newsletter-text{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+    .input-newletter{
+        width: 300px;
+        height: 40px;
+        background-color: #555555;;
+        border: 1px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+.input-recherche{
+    padding: 20px 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    width: 400px;
+}
+
+.connexion-input{
+    padding: 20px 30px;
+    background-color: #FAFAFA;
+    border: 1px solid #DCDCDC;
+    color: #555555;
+    font-size: 18px;
+    font-family: Nunito, sans-serif;
+    border-radius: 7px;
+    text-transform: capitalize;
+    width: 475px;
 }
