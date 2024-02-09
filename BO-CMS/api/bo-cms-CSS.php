@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="<?php $_SERVER['SERVER_NAME']?>/BO-CMS/content/CSS/admin-ui.css">
