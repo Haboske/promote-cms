@@ -1193,3 +1193,15 @@ p{
     font-weight: 500;
     width: 400px;
 }
+
+.connexion-input{
+    padding: 20px 30px;
+    background-color: #FAFAFA;
+    border: 1px solid #DCDCDC;
+    color: #555555;
+    font-size: 18px;
+    font-family: Nunito, sans-serif;
+    border-radius: 7px;
+    text-transform: capitalize;
+    width: 475px;
+}

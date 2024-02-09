@@ -152,7 +152,7 @@ function rewriteDatetime($datetime){
                     </div>
 
                     <div class="text">
-                        <a class="button white small margin-top-tiny">En Savoir Plus</a>
+                        <a class="button white small margin-top-tiny" href="blog-item.php?id=<?php echo $blog['blog_id']; ?>">En Savoir Plus</a>
                     </div>
 
                 </div>
@@ -227,6 +227,7 @@ function rewriteDatetime($datetime){
                                             echo "<h2>".$article['blog_title']."</h2>";
                                             echo "<p>".$article['blog_desc']."</p>";
 
+                                            echo "<a class='button small black' href='blog-item.php?id=".$article['blog_id']."'>Lire l'article</a>";
                                         echo "</div>";
                                     }
                                 } 
