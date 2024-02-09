@@ -25,7 +25,7 @@
                                 <input type="email" name="email" data-name="email" class="connexion-input" placeholder="Entrez votre email">
                                 <input type="password" name="password" data-name="password" class="connexion-input" placeholder="Entrez votre mots de passe">  
 
-                                <input type="submit" name="" value="Envoyer" class="button black small">  
+                                <input type="submit" name="connexion" value="Envoyer" class="button black small">  
                             </form>
                         </div>
                     </div>

@@ -1,9 +1,11 @@
 <?php 
 
-require "Config.php";
+require "api/config.php";
 
+
+var_dump($_POST);
 // Vérification si le formulaire a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST)) {
     // Récupération des données du formulaire
     $email = $_POST["email"];
     $password = $_POST["password"];
@@ -17,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $email = secureDonnee($email);
-    $password = secureDonnee($password);
+    $admin_password = secureDonnee($password);
 
     // Connexion à la base de données
     $servername = "mysql-promote-cms.alwaysdata.net";
@@ -32,8 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Requête pour obtenir le mot de passe correspondant à l'e-mail donné
-    $query = "SELECT admin_id, admin_username, admin_email, admin_password FROM users WHERE admin_email = '$email'";
+    $query = "SELECT admin_id, admin_username, admin_email, admin_password FROM bo_admin WHERE admin_email = '$email'";
     $result = mysqli_query($connexion, $query);
+
+    var_dump($result);
 
     if ($result && mysqli_num_rows($result) > 0) {
         // Utilisateur trouvé
@@ -41,22 +45,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $storedPassword = $row['admin_password'];
 
         // Vérification du mot de passe
-        if (password_verify($password, $storedPassword)) {
+        if (password_verify($admin_password, $storedPassword)) {
 
             session_start();
-            $_SESSION['admin_id'] = $user['admin_id'];
-            $_SESSION['admin_username'] = $user['admin_username'];
+            $_SESSION['admin_id'] = $row['admin_id'];
+            $_SESSION['admin_username'] = $row['admin_username'];
+            $_SESSION['is_admin'] = 1;
             // Redirige l'utilisateur vers une page sécurisée, par exemple :
             header("Location: /BO-CMS/index.php");
-        exit();
+
+            exit();
+            
+        } else {
+            // Mot de passe incorrect
+            echo "Mot de passe incorrect.";
+        }
     } else {
-        // Mot de passe incorrect
-        echo "Mot de passe incorrect.";
+        // Aucun utilisateur trouvé avec cet e-mail
+        echo "Aucun utilisateur trouvé avec cet e-mail.";
     }
-} else {
-    // Aucun utilisateur trouvé avec cet e-mail
-    echo "Aucun utilisateur trouvé avec cet e-mail.";
-}
 
 // Ferme la connexion à la base de données
 mysqli_close($connexion);
